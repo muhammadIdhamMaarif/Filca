@@ -67,6 +67,45 @@ const MENU_COMMAND = {
   type: 1,
 };
 
-const ALL_COMMANDS = [TEST_COMMAND, CHALLENGE_COMMAND, MENU_COMMAND];
+const ADD_ORDER_COMMAND = {
+  name: "addOrder",
+  description: "Menambahkan pesanan",
+  options: [
+    {
+      name: 'store_name',
+      description: 'ID toko (1-7)',
+      type: 4, // INTEGER
+      required: true,
+      choices: [
+        { name: 'Nasi Goreng & Mie',  value: 1 },
+        { name: 'Dapur Ummi Asti',    value: 2 },
+        { name: 'Lalapan Mbak Eli',   value: 3 },
+        { name: 'Amazing Mie',        value: 4 },
+        { name: 'Warung Bu Mimin',    value: 5 },
+        { name: 'Aneka Minuman',      value: 6 },
+        { name: 'Aneka Jajan',        value: 7 }
+      ],
+      options: [
+        {
+          name: 'store_name',
+          description: 'ID toko (1-7)',
+          type: 4, // INTEGER
+          required: true,
+          choices: [
+            { name: 'Nasi Goreng & Mie',  value: 1 },
+            { name: 'Dapur Ummi Asti',    value: 2 },
+            { name: 'Lalapan Mbak Eli',   value: 3 },
+            { name: 'Amazing Mie',        value: 4 },
+            { name: 'Warung Bu Mimin',    value: 5 },
+            { name: 'Aneka Minuman',      value: 6 },
+            { name: 'Aneka Jajan',        value: 7 }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+const ALL_COMMANDS = [TEST_COMMAND, CHALLENGE_COMMAND, MENU_COMMAND, ADD_ORDER_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
